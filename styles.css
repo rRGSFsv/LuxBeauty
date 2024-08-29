@@ -159,6 +159,15 @@ body {
         font-size: 1.5em; /* Уменьшение размера шрифта на мобильных устройствах */
         line-height: 1.2;
     }
+
+
+    .paris-image {
+        position: absolute;
+        bottom: 0;
+        right: 31px;
+        width: 171px;
+        height: 171px;
+}
     
     .extra-image {
         padding-right: 407px; /* Полное смещение изображения влево на мобильных устройствах */
