@@ -164,13 +164,13 @@ body {
     .paris-image {
         position: absolute;
         bottom: 0;
-        padding-left: 41px;
+        padding-left: 61px;
         width: 171px;
         height: 171px;
 }
     
     .extra-image {
-        padding-right: 207px; /* Полное смещение изображения влево на мобильных устройствах */
+        padding-right: 97px; /* Полное смещение изображения влево на мобильных устройствах */
         width: 30px;
         height: 40px;
     }
