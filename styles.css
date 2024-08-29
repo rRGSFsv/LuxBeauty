@@ -10,16 +10,17 @@ body {
     background-color: #977163;
     color: white;
     height: 85px;
-    font-family: 'Calluna';
+    font-family: 'Times New Roman', serif;
     text-align: center;
     position: relative;
     padding: 150px;
+    box-sizing: border-box;
 }
 
 .nav-bar h1 {
     margin: 0;
     font-size: 2.5em;
-    line-height: 85px;
+    line-height: 1.2; /* Уменьшить line-height для предотвращения разрыва строки */
 }
 
 #canvas {
@@ -142,12 +143,28 @@ body {
 
 .extra-image {
     position: absolute;
-    left: 0;
+    left: 10px; /* Уменьшение отступа слева для смещения влево */
     transform: translateY(-50%);
-    padding-bottom: 190px;
-    padding-right: 1000px;
     width: 35px;
     height: 47px;
+}
+
+@media (max-width: 768px) {
+    .nav-bar {
+        padding: 10px; /* Уменьшение padding для мобильных устройств */
+        height: auto; /* Изменение высоты для мобильных устройств */
+    }
+    
+    .nav-bar h1 {
+        font-size: 1.5em; /* Уменьшение размера шрифта на мобильных устройствах */
+        line-height: 1.2;
+    }
+    
+    .extra-image {
+        left: 0; /* Полное смещение изображения влево на мобильных устройствах */
+        width: 30px;
+        height: 40px;
+    }
 }
 
 .contact-info {
