@@ -1,0 +1,226 @@
+/* General Styles */
+body {
+    font-family: 'Varela', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.nav-bar {
+    background-color: #977163;
+    color: white;
+    height: 85px;
+    font-family: 'Calluna';
+    text-align: center;
+    position: relative;
+    padding: 150px;
+}
+
+.nav-bar h1 {
+    margin: 0;
+    font-size: 2.5em;
+    line-height: 85px;
+}
+
+#canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.main-content {
+    display: flex;
+    margin-top: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.image-slider {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    margin: 0;
+}
+
+.image-slider img {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.text-content {
+    width: 800px;
+    padding-left: 50px;
+    padding-top: 50px;
+}
+
+.text-content h2 {
+    font-size: 2em;
+}
+
+.services {
+    padding: 20px;
+}
+
+.services h3 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.service-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.service-card {
+    position: relative;
+    width: 280px;
+    height: 330px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.service-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.service-card:hover img {
+    transform: scale(1.1);
+}
+
+.service-description {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+    transition: height 0.5s ease;
+}
+
+.service-card:hover .service-description {
+    height: 100%;
+}
+
+.price {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #000;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.additional-images {
+    position: relative;
+    padding: 20px;
+}
+
+.paris-image {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 171px;
+    height: 171px;
+}
+
+.extra-image {
+    position: absolute;
+    left: 0;
+    transform: translateY(-50%);
+    padding-bottom: 190px;
+    padding-right: 1000px;
+    width: 35px;
+    height: 47px;
+}
+
+.contact-info {
+    background-color: #151417;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    flex-shrink: 0;
+}
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
+    margin: 0 10px;
+}
+
+/* Loading Screen Styles */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #2b1d3e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.social-links {
+    background-color: #977163;
+    display: flex;
+    padding: 15px;
+    gap: 10px; /* Расстояние между иконками */
+    justify-content: center; /* Центрируем иконки по горизонтали */
+    align-items: center; /* Выравнивание по вертикали */
+}
+
+.social-links img {
+    width: 30px;  /* Ширина иконки */
+    height: 30px; /* Высота иконки */
+    transition: transform 0.3s ease; /* Плавная анимация при наведении */
+}
+
+.social-links img:hover {
+    transform: scale(1.1); /* Увеличение иконки при наведении */
+}
+
+.extra-image {
+    position: relative;
+    animation: float 30s ease-out infinite; /* Анимация длительностью 5 секунд, повторяется бесконечно */
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(60px); /* Начальная и конечная позиции (на месте) */
+    }
+    50% {
+        transform: translateY(-350px); /* Поднимается вверх на 20px в середине анимации */
+    }
+}
+
+.loader {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #6a0dad;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
