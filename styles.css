@@ -143,7 +143,7 @@ body {
 
 .extra-image {
     position: absolute;
-    right: 520px; /* Уменьшение отступа слева для смещения влево */
+    right: 220px; /* Уменьшение отступа слева для смещения влево */
     transform: translateY(-50%);
     width: 35px;
     height: 47px;
@@ -164,13 +164,13 @@ body {
     .paris-image {
         position: absolute;
         bottom: 0;
-        left: 41px;
+        padding-left: 41px;
         width: 171px;
         height: 171px;
 }
     
     .extra-image {
-        padding-right: 407px; /* Полное смещение изображения влево на мобильных устройствах */
+        padding-right: 207px; /* Полное смещение изображения влево на мобильных устройствах */
         width: 30px;
         height: 40px;
     }
