@@ -18,6 +18,18 @@ body {
     margin: 0 10px;
 }
 
+.language-switcher {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.lang-icon {
+    cursor: pointer;
+    width: 30px; /* Настройте размер по необходимости */
+    height: auto;
+}
+
 .social-links img, .language-switcher .lang-icon {
     width: 30px; /* Увеличиваем размер иконок флагов */
     height: 20px;
@@ -165,9 +177,9 @@ body {
 .paris-image {
     position: absolute;
     bottom: 0;
-    right: 100px;
-    width: 65px;
-    height: 164px;
+    right: 0;
+    width: 171px;
+    height: 171px;
 }
 
 .extra-image {
@@ -182,7 +194,7 @@ body {
     background-color: #151417;
     color: white;
     text-align: center;
-    padding: 30px;
+    padding: 50px;
     flex-shrink: 0;
 }
 
@@ -210,6 +222,7 @@ body {
     background-color: #977163;
     display: flex;
     padding: 15px;
+    gap: 10px;
     justify-content: center;
     align-items: center;
 }
@@ -267,7 +280,7 @@ body {
     }
 
     .text-content {
-        width: 91%;
+        width: 100%;
     }
 
     .service-cards {
@@ -281,16 +294,14 @@ body {
 
     .paris-image {
         position: absolute;
-        scale: 70%;
-        top: -20px;
-        width: 65px;
-        height: 164px;
-        right: 26px;
+        bottom: 0;
+        padding-left: 61px;
+        width: 171px;
+        height: 171px;
     }
 
     .extra-image {
         padding-right: 17px;
-        right: 170px;
         width: 30px;
         height: 40px;
     }
@@ -301,7 +312,11 @@ body {
         flex-direction: row;
     }
 
-  
+    .text-content {
+        width: 50%;
+background-color: #ffffff;
+    }
+
     .service-cards {
         flex-wrap: wrap;
     }
