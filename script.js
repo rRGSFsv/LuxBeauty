@@ -11,8 +11,8 @@ document.addEventListener('DOMContentLoaded', function() {
         constructor(xpos = 0, ypos = 0, color = Drop.color) {
             this.pos = [xpos, ypos];
             let sizeRange = Drop.maxSize - Drop.minSize;
-            let sizeRandMin = Drop.minSize;
-            let sizeRandMax = Drop.maxSize;
+            let sizeRandMin;
+            let sizeRandMax;
             
             let rand = Math.random();
             if (rand < 0.7) {
@@ -72,8 +72,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     const canvas = document.getElementById('canvas');
+    if (!canvas) {
+        console.log("Canvas element not found.");
+        return;
+    }
     if (!canvas.getContext) {
-        console.log("Canvas not supported.");
+        console.log("Canvas context not supported.");
         return;
     }
     const ctx = canvas.getContext('2d');
@@ -95,11 +99,10 @@ document.addEventListener('DOMContentLoaded', function() {
         
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         
-        for (let i = 0; i < drops.length; i++) {
-            let drop = drops[i];
+        drops.forEach(drop => {
             drop.draw(ctx);
             drop.update();
-        }
+        });
         
         drops = drops.filter(drop => drop.pos[1] <= canvas.height);
     }, 20);
@@ -108,35 +111,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const images = ['nail1.jpg', 'nail2.jpg', 'nail3.jpg', 'nail4.jpg', 'nail5.jpg', 'nail6.jpg', 'nail7.jpg'];
     let currentIndex = 0;
     const carousel = document.getElementById('carousel');
-
-document.addEventListener('DOMContentLoaded', function() {
-    const images = ['nail1.jpg', 'nail2.jpg', 'nail3.jpg', 'nail4.jpg', 'nail5.jpg', 'nail6.jpg', 'nail7.jpg'];
-    let currentIndex = 0;
-    const carousel = document.getElementById('carousel');
-
-   document.addEventListener('DOMContentLoaded', function() {
-    const images = ['nail1.jpg', 'nail2.jpg', 'nail3.jpg', 'nail4.jpg', 'nail5.jpg', 'nail6.jpg', 'nail7.jpg'];
-    let currentIndex = 0;
-    const carousel = document.getElementById('carousel');
-
-    function changeImage() {
-        currentIndex = (currentIndex + 1) % images.length;
-        const newImage = new Image();
-        newImage.src = images[currentIndex];
-        newImage.onload = function() {
-            carousel.src = newImage.src;
-            carousel.style.opacity = '1';
-        };
-        carousel.style.opacity = '0';
-    }
-
-    setInterval(changeImage, 3000); // Смена изображения каждые 3 секунды
-});
-
-
-    setInterval(changeImage, 3000); // Смена изображения каждые 3 секунды
-});
-
 
     function changeImage() {
         carousel.style.opacity = '0';  // Hide the image before changing it
@@ -158,25 +132,80 @@ document.addEventListener('DOMContentLoaded', function() {
             loadingScreen.style.display = 'none';
         }, 500); // Time to match the transition duration
     }
-});
 
-document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('commentForm');
+    // Translation functionality
+    const translations = {
+        uk: {
+            title: "LuxBeauty Studio",
+            subtitle: "Персональний догляд для Вашої досконалості",
+            description: "LuxBeauty Studio ми пропонуємо професійне італійське нарощування волосся, яке додасть об’єму та довжини вашим локонам. Ми використовуємо лише високоякісні матеріали, забезпечуючи чудовий результат. Також у нас ви можете придбати преміальне натуральне волосся.",
+            servicesTitle: "Наши услуги:",
+            service1: "Нарощування волосся - це послуга, яка дає змогу домогтися бажаної довжини, об'єму та густоти волосся. Ми пропонуємо якісні та безпечні методики, щоб підкреслити вашу індивідуальність і надати волоссю природного вигляду.",
+            service2: "Манікюр - це мистецтво догляду за вашими руками та нігтями. Наші майстри запропонують вам широкий спектр послуг від класичного манікюру до складного дизайну нігтів. Ми використовуємо тільки якісні матеріали та новітні техніки, щоб ваші руки мали ідеальний вигляд.",
+            service3: "LuxBeauty Studio ми пропонуємо професійне італійське нарощування волосся, яке додасть об’єму та довжини вашим локонам. Ми використовуємо лише високоякісні матеріали, забезпечуючи чудовий результат.",
+            address: "Адреса: Париж, Франція",
+            phone: "Телефон: +380980880717, +33766953323",
+            hours: "Робочі години: Понеділок - П'ятниця: 9:00 - 18:00",
+            contactTitle: "Контакти:"
+        },
+        fr: {
+            title: "LuxBeauty Studio",
+            subtitle: "Soins personnalisés pour votre perfection",
+            description: "LuxBeauty Studio propose des extensions de cheveux italiennes professionnelles qui ajouteront du volume et de la longueur à vos mèches. Nous utilisons uniquement des matériaux de haute qualité, garantissant un excellent résultat. Vous pouvez également acheter des cheveux naturels de qualité supérieure chez nous.",
+            servicesTitle: "Nos services :",
+            service1: "Les extensions de cheveux sont un service qui permet d'obtenir la longueur, le volume et la densité de cheveux souhaités. Nous proposons des méthodes de haute qualité et sûres pour mettre en valeur votre individualité et donner un aspect naturel à vos cheveux.",
+            service2: "La manucure est un art qui prend soin de vos mains et de vos ongles. Nos maîtres vous proposeront une large gamme de services allant de la manucure classique à la conception complexe des ongles. Nous utilisons uniquement des matériaux de haute qualité et des techniques modernes pour que vos mains aient une apparence parfaite.",
+            service3: "LuxBeauty Studio propose des extensions de cheveux italiennes professionnelles qui ajouteront du volume et de la longueur à vos mèches. Nous utilisons uniquement des matériaux de haute qualité, garantissant un excellent résultat. Vous pouvez également acheter des cheveux naturels de qualité supérieure chez nous.",
+            address: "Adresse : Paris, France",
+            phone: "Téléphone : +380980880717, +33766953323",
+            hours: "Heures d'ouverture : Lundi - Vendredi : 9h00 - 18h00",
+            contactTitle: "Contacts :"
+        },
+        en: {
+            title: "LuxBeauty Studio",
+            subtitle: "Personal care for your perfection",
+            description: "LuxBeauty Studio offers professional Italian hair extensions that will add volume and length to your locks. We use only high-quality materials, ensuring an excellent result. You can also purchase premium natural hair from us.",
+            servicesTitle: "Our Services:",
+            service1: "Hair extensions are a service that allows you to achieve the desired length, volume, and density of your hair. We offer high-quality and safe methods to highlight your individuality and give your hair a natural look.",
+            service2: "Manicure is the art of caring for your hands and nails. Our experts will offer you a wide range of services from classic manicure to complex nail designs. We use only high-quality materials and the latest techniques to ensure your hands look perfect.",
+            service3: "LuxBeauty Studio offers professional Italian hair extensions that will add volume and length to your locks. We use only high-quality materials, ensuring an excellent result. You can also purchase premium natural hair from us.",
+            address: "Address: Paris, France",
+            phone: "Phone: +380980880717, +33766953323",
+            hours: "Working Hours: Monday - Friday: 9:00 AM - 6:00 PM",
+            contactTitle: "Contacts:"
+        },
+    };
 
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
+    function setLanguage(lang) {
+        const elements = {
+            'title': 'title',
+            'subtitle': 'subtitle',
+            'description': 'description',
+            'services-title': 'servicesTitle',
+            'service1-description': 'service1',
+            'service2-description': 'service2',
+            'service3-description': 'service3',
+            'contact-title': 'contactTitle',
+            'contact-address': 'address',
+            'contact-phone': 'phone',
+            'contact-hours': 'hours'
+        };
 
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const comment = document.getElementById('comment').value;
+        Object.keys(elements).forEach(id => {
+            const el = document.getElementById(id);
+            if (el) {
+                el.textContent = translations[lang][elements[id]];
+            }
+        });
+    }
 
-        console.log(`Имя: ${name}`);
-        console.log(`Электронная почта: ${email}`);
-        console.log(`Комментарий: ${comment}`);
-
-        alert('Спасибо за ваш комментарий!');
-
-        form.reset();
+    document.querySelectorAll('.lang-icon').forEach(icon => {
+        icon.addEventListener('click', () => {
+            const lang = icon.getAttribute('data-lang');
+            setLanguage(lang);
+        });
     });
-});
 
+    // Default language setup
+    setLanguage('uk'); // or 'fr', 'en' depending on the default language you prefer
+});

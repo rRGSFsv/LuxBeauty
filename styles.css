@@ -6,6 +6,45 @@ body {
     box-sizing: border-box;
 }
 
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #977163;
+}
+
+.social-links a {
+    margin: 0 10px;
+}
+
+.language-switcher {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.lang-icon {
+    cursor: pointer;
+    width: 30px; /* Настройте размер по необходимости */
+    height: auto;
+}
+
+.social-links img, .language-switcher .lang-icon {
+    width: 30px; /* Увеличиваем размер иконок флагов */
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+.language-switcher {
+    display: flex;
+    gap: 10px;
+}
+
+.lang-icon:hover {
+    transform: scale(1.1);
+}
+
 .nav-bar {
     background-color: #977163;
     color: white;

@@ -13,57 +13,66 @@
     <div class="loading-screen">
         <div class="loader"></div>
     </div>
-    <div class="social-links">
-        <a href="https://www.instagram.com/luxbeauty_studio_paris?utm_source=qr"><img src="instagram.png" alt="Instagram"></a>
-        <a href="https://t.me/LuxBeauty_Studio_Paris"><img src="telegram.png" alt="Telegram"></a>
-        <a href="https://www.instagram.com/luxbeauty_studio_paris?utm_source=qr"><img src="facebook.png" alt="Facebook"></a>
+    <div class="top-bar">
+        <div class="social-links">
+            <a href="https://www.instagram.com/luxbeauty_studio_paris?utm_source=qr"><img src="instagram.png" alt="Instagram"></a>
+            <a href="https://t.me/LuxBeauty_Studio_Paris"><img src="telegram.png" alt="Telegram"></a>
+            <a href="https://www.instagram.com/luxbeauty_studio_paris?utm_source=qr"><img src="facebook.png" alt="Facebook"></a>
+        </div>
+        <!-- Language Switcher -->
+        <div class="language-switcher">
+            <img src="ukraine-flag.jpg" alt="Ukrainian" class="lang-icon" data-lang="uk">
+            <img src="france-flag.jpg" alt="French" class="lang-icon" data-lang="fr">
+            <img src="uk-flag.jpg" alt="English" class="lang-icon" data-lang="en">
+        </div>
     </div>
     <!-- Main Content -->
     <div class="nav-bar">
-        <h1>LuxBeauty Studio</h1>
+        <h1 id="title">LuxBeauty Studio</h1>
         <img src="paris.png" alt="Paris" class="paris-image">
         <img src="ballon.png" alt="Extra Image" class="extra-image">
         <canvas id="canvas">Sorry, your browser does not support HTML canvas.</canvas>
     </div>
     <div class="main-content">
-        <div class="image-slider">
-            <img id="carousel" src="nail1.jpg" alt="Nail Art">
-        </div>
-        <div class="text-content">
-            <h2>LuxBeauty Studio</h2>
-            <p>Персональний догляд для Вашої досконалості</p>
-            <p>LuxBeauty Studio ми пропонуємо професійне італійське нарощування волосся, яке додасть об’єму та довжини вашим локонам. Ми використовуємо лише високоякісні матеріали, забезпечуючи чудовий результат. Також у нас ви можете придбати преміальне натуральне волосся.</p>
-            <div class="services">
-                <h3>Наши услуги:</h3>
-                <div class="service-cards">
-                    <div class="service-card">
-                        <img src="service1.jpg" alt="Service 1">
-                        <div class="service-description">
-                            Нарощування волосся - це послуга, яка дає змогу домогтися бажаної довжини, об'єму та густоти волосся. Ми пропонуємо якісні та безпечні методики, щоб підкреслити вашу індивідуальність і надати волоссю природного вигляду.
-                        </div>
+    <div class="image-slider">
+        <img id="carousel" src="nail1.jpg" alt="Nail Art">
+    </div>
+    <div class="text-content">
+        <h2 id="subtitle">LuxBeauty Studio</h2>
+        <p id="description">LuxBeauty Studio ми пропонуємо професійне італійське нарощування волосся, яке додасть об’єму та довжини вашим локонам. Ми використовуємо лише високоякісні матеріали, забезпечуючи чудовий результат.</p>
+        <p id="additional-info">Також у нас ви можете придбати преміальне натуральне волосся.</p>
+        <div class="services">
+            <h3 id="services-title">Наши услуги:</h3>
+            <div class="service-cards">
+                <div class="service-card">
+                    <img src="service1.jpg" alt="Service 1">
+                    <div class="service-description">
+                        <p id="service1-description">Нарощування волосся - це послуга, яка дає змогу домогтися бажаної довжини, об'єму та густоти волосся. Ми пропонуємо якісні та безпечні методики, щоб підкреслити вашу індивідуальність і надати волоссю природного вигляду.</p>
                     </div>
-                    <div class="service-card">
-                        <img src="service2.jpg" alt="Service 2">
-                        <div class="service-description">
-                            Манікюр - це мистецтво догляду за вашими руками та нігтями. Наші майстри запропонують вам широкий спектр послуг від класичного манікюру до складного дизайну нігтів. Ми використовуємо тільки якісні матеріали та новітні техніки, щоб ваші руки мали ідеальний вигляд.
-                        </div>
+                </div>
+                <div class="service-card">
+                    <img src="service2.jpg" alt="Service 2">
+                    <div class="service-description">
+                        <p id="service2-description">Манікюр - це мистецтво догляду за вашими руками та нігтями. Наші майстри запропонують вам широкий спектр послуг від класичного манікюру до складного дизайну нігтів. Ми використовуємо тільки якісні матеріали та новітні техніки, щоб ваші руки мали ідеальний вигляд.</p>
                     </div>
-                    <div class="service-card">
-                        <img src="service3.jpg" alt="Service 3">
-                        <div class="service-description">
-                            LuxBeauty Studio ми пропонуємо професійне італійське нарощування волосся, яке додасть об’єму та довжини вашим локонам. Ми використовуємо лише високоякісні матеріали, забезпечуючи чудовий результат. Також у нас ви можете придбати преміальне натуральне волосся.
-                        </div>
+                </div>
+                <div class="service-card">
+                    <img src="service3.jpg" alt="Service 3">
+                    <div class="service-description">
+                        <p id="service3-description">LuxBeauty Studio ми пропонуємо професійне італійське нарощування волосся, яке додасть об’єму та довжини вашим локонам. Ми використовуємо лише високоякісні матеріали, забезпечуючи чудовий результат.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="contact-info">
-        <h3>Контакти:</h3>
-        <p>Адреса: Париж, Франція</p>
-        <p>Телефон: +380980880717, +33766953323</p>
-        <p>Робочі години: Понеділок - П'ятниця: 9:00 - 18:00</p>
-    </div>
+</div>
+<div class="contact-info">
+    <h3 id="contact-title">Контакти:</h3>
+    <p id="contact-address">Адреса: Париж, Франція</p>
+    <p id="contact-phone">Телефон: +380980880717, +33766953323</p>
+    <p id="contact-hours">Робочі години: Понеділок - П'ятниця: 9:00 - 18:00</p>
+</div>
+
     <script src="script.js"></script>
 </body>
 </html>
