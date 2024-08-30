@@ -178,7 +178,7 @@ body {
 .paris-image {
     position: absolute;
     bottom: 0;
-    right: 0;
+    right: 220px;
     width: 65px;
     height: 164px;
 }
@@ -296,11 +296,11 @@ background-color: #ffffff;
 
     .paris-image {
         position: absolute;
-        top: -26px;
-        padding-left: 61px;
+        top: -21px;
         scale: 70%;
         width: 65px;
         height: 164px;
+        right: 1px;
     }
 
     .extra-image {
