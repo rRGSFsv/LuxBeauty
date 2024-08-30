@@ -9,18 +9,18 @@ body {
 .nav-bar {
     background-color: #977163;
     color: white;
-    height: 85px;
+    height: auto;
     font-family: 'Times New Roman', serif;
     text-align: center;
     position: relative;
-    padding: 150px;
+    padding: 30px;
     box-sizing: border-box;
 }
 
 .nav-bar h1 {
     margin: 0;
     font-size: 2.5em;
-    line-height: 1.2; /* Уменьшить line-height для предотвращения разрыва строки */
+    line-height: 1.2;
 }
 
 #canvas {
@@ -34,6 +34,7 @@ body {
 
 .main-content {
     display: flex;
+    flex-direction: row;
     margin-top: 0;
     position: relative;
     z-index: 1;
@@ -55,9 +56,8 @@ body {
 }
 
 .text-content {
-    width: 800px;
-    padding-left: 50px;
-    padding-top: 50px;
+    width: 50%;
+    padding: 20px;
 }
 
 .text-content h2 {
@@ -75,21 +75,24 @@ body {
 
 .service-cards {
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
 }
 
 .service-card {
+    flex: 1 1 calc(33.333% - 40px);
     position: relative;
-    width: 280px;
-    height: 330px;
+    width: calc(33.333% - 40px);
+    height: auto;
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 10px;
 }
 
 .service-card img {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
     transition: transform 0.5s ease;
 }
@@ -142,37 +145,10 @@ body {
 
 .extra-image {
     position: absolute;
-    right: 220px; /* Уменьшение отступа слева для смещения влево */
+    right: 220px;
     transform: translateY(-50%);
     width: 35px;
     height: 47px;
-}
-
-@media (max-width: 768px) {
-    .nav-bar {
-        padding: 30px; /* Уменьшение padding для мобильных устройств */
-        height: auto; /* Изменение высоты для мобильных устройств */
-    }
-    
-    .nav-bar h1 {
-        font-size: 1.5em; /* Уменьшение размера шрифта на мобильных устройствах */
-        line-height: 1.2;
-    }
-
-
-    .paris-image {
-        position: absolute;
-        bottom: 0;
-        padding-left: 61px;
-        width: 171px;
-        height: 171px;
-}
-    
-    .extra-image {
-        padding-right: 17px; /* Полное смещение изображения влево на мобильных устройствах */
-        width: 30px;
-        height: 40px;
-    }
 }
 
 .contact-info {
@@ -207,32 +183,32 @@ body {
     background-color: #977163;
     display: flex;
     padding: 15px;
-    gap: 10px; /* Расстояние между иконками */
-    justify-content: center; /* Центрируем иконки по горизонтали */
-    align-items: center; /* Выравнивание по вертикали */
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
 }
 
 .social-links img {
-    width: 30px;  /* Ширина иконки */
-    height: 30px; /* Высота иконки */
-    transition: transform 0.3s ease; /* Плавная анимация при наведении */
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
 }
 
 .social-links img:hover {
-    transform: scale(1.1); /* Увеличение иконки при наведении */
+    transform: scale(1.1);
 }
 
 .extra-image {
     position: relative;
-    animation: float 30s ease-out infinite; /* Анимация длительностью 5 секунд, повторяется бесконечно */
+    animation: float 30s ease-out infinite;
 }
 
 @keyframes float {
     0%, 100% {
-        transform: translateY(60px); /* Начальная и конечная позиции (на месте) */
+        transform: translateY(60px);
     }
     50% {
-        transform: translateY(-350px); /* Поднимается вверх на 20px в середине анимации */
+        transform: translateY(-350px);
     }
 }
 
@@ -248,4 +224,66 @@ body {
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-bar {
+        padding: 20px;
+    }
+
+    .nav-bar h1 {
+        font-size: 1.8em;
+    }
+
+    .main-content {
+        flex-direction: column;
+    }
+
+    .text-content {
+        width: 100%;
+    }
+
+    .service-cards {
+        flex-direction: column;
+    }
+
+    .service-card {
+        width: 100%;
+        margin: 0 0 20px;
+    }
+
+    .paris-image {
+        position: absolute;
+        bottom: 0;
+        padding-left: 61px;
+        width: 171px;
+        height: 171px;
+    }
+
+    .extra-image {
+        padding-right: 17px;
+        width: 30px;
+        height: 40px;
+    }
+}
+
+@media (min-width: 769px) {
+    .main-content {
+        flex-direction: row;
+    }
+
+    .text-content {
+        width: 50%;
+    }
+
+    .service-cards {
+        flex-wrap: wrap;
+    }
+
+    .service-card {
+        flex: 1 1 calc(33.333% - 40px);
+        width: calc(33.333% - 40px);
+        margin: 10px;
+    }
 }
