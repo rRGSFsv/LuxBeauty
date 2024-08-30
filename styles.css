@@ -296,10 +296,11 @@ background-color: #ffffff;
 
     .paris-image {
         position: absolute;
-        bottom: 0;
+        top: -26px;
         padding-left: 61px;
-        width: 171px;
-        height: 171px;
+        scale: 70%;
+        width: 65px;
+        height: 164px;
     }
 
     .extra-image {
@@ -309,23 +310,4 @@ background-color: #ffffff;
     }
 }
 
-@media (min-width: 769px) {
-    .main-content {
-        flex-direction: row;
-    }
 
-    .text-content {
-        width: 50%;
-background-color: #ffffff;
-    }
-
-    .service-cards {
-        flex-wrap: wrap;
-    }
-
-    .service-card {
-        flex: 1 1 calc(33.333% - 40px);
-        width: calc(33.333% - 40px);
-        margin: 10px;
-    }
-}
