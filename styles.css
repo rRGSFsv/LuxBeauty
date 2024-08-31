@@ -223,7 +223,6 @@ body {
     background-color: #977163;
     display: flex;
     padding: 15px;
-    gap: 10px;
     justify-content: center;
     align-items: center;
 }
